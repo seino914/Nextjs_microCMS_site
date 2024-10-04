@@ -2,7 +2,7 @@ import { News } from "@/app/_libs/microcms";
 import styles from "./index.module.css";
 import Image from "next/image";
 import Category from "../Category";
-import Date from "../Data";
+import Date from "../Date";
 import Link from "next/link";
 
 type Props = {
@@ -28,7 +28,7 @@ export default function NewsList({ news }: Props) {
               />
             ) : (
               <Image
-                className={styles.Image}
+                className={styles.image}
                 src="/no-image.png"
                 alt="No Image"
                 width={1200}

@@ -37,7 +37,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 # Nextjs-microCMS-site
 
-###メモ #参考元
+### メモ
+
+# 参考元
+
 ・モダン Web 制作入門
 https://www.shoeisha.co.jp/book/detail/9784798183664
 ・github
