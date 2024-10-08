@@ -5,11 +5,12 @@ import { getNewsList } from "./_libs/microcms";
 import styles from "./page.module.css";
 import Image from "next/image";
 
+export const revalidate = 0;
+
 export default async function Home() {
   const data = await getNewsList({
     limit: TOP_NEWS_LIMIT,
   });
-  
 
   return (
     <>
