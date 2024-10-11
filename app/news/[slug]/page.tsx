@@ -3,6 +3,7 @@ import ButtonLink from "@/app/_components/ButtonLink";
 import { getNewsDetail } from "@/app/_libs/microcms";
 import styles from "./page.module.css";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 
 type Props = {
   params: { slug: string };
@@ -10,6 +11,25 @@ type Props = {
     dk?: string;
   };
 };
+
+export async function generateMetadata({
+  params,
+  searchParams,
+}: Props): Promise<Metadata> {
+  const data = await getNewsDetail(params.slug, {
+    draftKey: searchParams.dk,
+  });
+
+  return {
+    title: data.title,
+    description: data.description,
+    openGraph: {
+      title: data.title,
+      description: data.description,
+      images: [data?.thumbnail?.url ?? ""],
+    },
+  };
+}
 
 export default async function Page({ params, searchParams }: Props) {
   const data = await getNewsDetail(params.slug, {
